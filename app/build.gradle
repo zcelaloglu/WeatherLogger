@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion app.compileSdk
+
+    defaultConfig {
+        applicationId app.id
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", '"http://api.openweathermap.org/data/2.5/"'
+        buildConfigField "String", "API_KEY", '"0991dc01bca8fbd2f35a2e9181028711"'
+        buildConfigField "String", "UNITS", '"metric"'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    implementation libraries.kotlin
+
+    //Support libraries
+    implementation libraries.appCompatV7
+    implementation libraries.recyclerView
+    implementation libraries.cardView
+    implementation libraries.constraintLayout
+
+    // ViewModel and LiveData
+    implementation libraries.arch
+
+    // Coroutines
+    implementation libraries.coroutinesCore
+    implementation libraries.coroutinesAndroid
+
+    //retrofit
+    api libraries.retrofit
+    api libraries.retrofitGsonConverter
+    api libraries.okhttp
+    implementation libraries.retrofitCoroutinesAdapter
+
+    //Dagger
+    implementation libraries.dagger
+    implementation libraries.daggerAndroid
+    kapt libraries.daggerCompiler
+    kapt libraries.daggerAnnotationProcessor
+
+    //gson
+    implementation libraries.gson
+
+    //glide
+    implementation libraries.glide
+
+    // Room database
+    implementation libraries.roomRuntime
+    kapt libraries.roomCompiler
+
+    //test
+    testImplementation testDependencies.jUnit
+    testImplementation testDependencies.mockito
+}

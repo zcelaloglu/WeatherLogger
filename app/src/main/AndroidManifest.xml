@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.celaloglu.zafer.weather">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name="com.celaloglu.zafer.weather.WeatherApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name="com.celaloglu.zafer.weather.ui.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.celaloglu.zafer.weather.ui.detail.DetailActivity"/>
+
+        <provider
+            android:name=".provider.WeatherContentProvider"
+            android:authorities="com.celaloglu.zafer.weather.provider.WeatherContentProvider.provider"
+            android:exported="true"
+            android:readPermission="com.celaloglu.zafer.weather.provider.WeatherContentProvider.provider.READ"/>
+
+    </application>
+
+</manifest>

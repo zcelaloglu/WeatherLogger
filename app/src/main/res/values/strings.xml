@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="app_name">Weather Logger</string>
+    <string name="menu_save">Save</string>
+    <string name="no_internet_connection_message" tools:ignore="ExtraTranslation">Oops! An error has been occurred,
+        looks like your internet connection is disabled</string>
+
+    <string name="content_lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer
+        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</string>
+
+    <string name="seconds">%1$d seconds ago</string>
+    <string name="minutes">%1$d minutes ago</string>
+    <string name="hours">%1$d hours ago</string>
+    <string name="days">%1$d days ago</string>
+
+    <string name="temperature">Temperature:</string>
+    <string name="min_temperature">Min Temperature:</string>
+    <string name="max_temperature">Max Temperature:</string>
+    <string name="pressure">Pressure:</string>
+    <string name="humidity">Humidity:</string>
+    <string name="date">Date:</string>
+    <string name="more_details">More Details</string>
+
+    <string name="celsius_formatter">%1$d°C</string>
+    <string name="pressure_formatter">%1$d hPa</string>
+    <string name="humidity_formatter">%1$d%%</string>
+
+</resources>
